@@ -7,28 +7,34 @@ puts "start seeding"
 Manager.create([
      {
          name: "Williams Emmanuel",
+         username: "willy@28",
          age: 30,
          address: "Robert Robertson, 1234 NW Bobcat Lane",
          phoneNumber: "+254790940364",
          email: "williamsemmauel@gmail.com",
+         password: "Willy234",
         #  venue_id: 2
      },
 
      {
          name: "Atemba Mutua",
+         username: "Atemba",
          age: 26,
          address: "P.O. Box 69, Mombasa",
          phoneNumber: "+254729604873",
          email: "atembamutua@gmail.com",
+         password: "Atemba1998",
         #  venue_id: 1
      },
 
       {
          name: "Atieno Purity",
+         username: "Atis",
          age: 24,
          address: "P.O. Box 201, Kabarnet",
          phoneNumber: "+254724628176",
          email: "atienopurity@gmail.com",
+         password: "GOhome27"
         #  venue_id: 2
      }
 ]) 
@@ -36,28 +42,34 @@ Manager.create([
 Client.create([
     {
       name: "Ibrahim mutua",
+      username: "Mutua",
       age: 23,
       address: "P.O.Box 351, Mombasa",
       phoneNumber: "+254727421437",
       email: "ibrahimmutua@gmail.com",
+      password: "fdtheg143",
     #   booking_id: 3
     },
 
     {
        name: "Henry kawira",
+       username: "Xu khai",
        age: 25,
        address: "P.O.Box 30, Kabarnet",
        phoneNumber: "+254726574868",
        email: "henrykawira@gmail.com",
+       password: "Xukhai25",
     #    booking_id: 1
     },
 
     {
       name: "Pollax kibet",
+      username: "Polla",
       age: 23,
       address: "P.O.Box 10, Eldoret",
       phoneNumber: "+254746782645",
       email: "pollaxkibet@gmail.com",
+      password: "Polla273",
     #   booking_id: 2
     }
 ])
