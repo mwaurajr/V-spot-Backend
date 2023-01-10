@@ -27,4 +27,8 @@ group :development do
   # Speed up commands on slow machines / big apps [https://github.com/rails/spring]
   # gem "spring"
 end
+ gem 'bcrypt', '~> 3.1.7'
+ gem "jwt"
+ gem 'faker'
+ gem "active_model_serializers"
 
