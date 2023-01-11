@@ -19,8 +19,19 @@ class ReviewsController < ApplicationController
     if review.valid?
         render json: review, status: :created
     else
-        render json: {error: "Invalid name or password"}, status: :unprocessable_entity
+        render json: {errors: review.errors.full_messages}, status: :unprocessable_entity
     end
+  end
+
+  def update
+    review = Review.find_by(id: session[:review_id])
+      if review
+         review = Review.find_by(id: params[:id])
+         review.update(review_params)
+         render json: review, status: :accepted
+      else
+         render json: { error: "Not authorized" }, status: :unauthorized
+      end
   end
 
   def destroy
