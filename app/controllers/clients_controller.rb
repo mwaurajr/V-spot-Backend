@@ -18,7 +18,7 @@ class ClientsController < ApplicationController
     end
 
     def create
-        client = Client.create(client_params)
+        client = Client.create!(client_params)
         session[:client_id] = client.id
         render json: client, status: :created
     end
