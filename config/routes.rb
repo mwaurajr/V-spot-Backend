@@ -1,7 +1,11 @@
 Rails.application.routes.draw do
-  namespace :api do
-    namespace :v1 do
-      post :orders, to: 'orders#create'
-    end
-  end
+  resources :mpesas
+
+  post "/stkpush", to: "mpesas#stkpush"
+  post "/polling_payment", to: "mpesas#polling_payment"
+  
+  # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
+
+  # Defines the root path route ("/")
+  # root "articles#index"
 end

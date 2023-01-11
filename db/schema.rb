@@ -10,53 +10,21 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_01_09_183546) do
-  # These are extensions that must be enabled in order to support this database
-  enable_extension "plpgsql"
-
-  create_table "bookings", force: :cascade do |t|
-    t.string "startDate"
-    t.string "endDate"
-    t.integer "num_of_guests"
+ActiveRecord::Schema[7.0].define(version: 2023_01_10_154207) do
+  create_table "access_tokens", force: :cascade do |t|
+    t.string "token"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
-  create_table "customers", force: :cascade do |t|
-    t.string "name"
-    t.string "email"
-    t.string "stripe_id"
+  create_table "mpesas", force: :cascade do |t|
+    t.string "checkoutRequestID"
+    t.string "merchantRequestID"
+    t.string "amount"
+    t.string "mpesaReceiptNumber"
+    t.string "phoneNumber"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
-  create_table "orders", force: :cascade do |t|
-    t.integer "amount_cents"
-    t.integer "payment_method"
-    t.bigint "customer_id", null: false
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["customer_id"], name: "index_orders_on_customer_id"
-  end
-
-  create_table "payments", force: :cascade do |t|
-    t.bigint "order_id", null: false
-    t.string "stripe_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["order_id"], name: "index_payments_on_order_id"
-  end
-
-  create_table "venues", force: :cascade do |t|
-    t.integer "price"
-    t.string "description"
-    t.string "location"
-    t.string "capacity"
-    t.string "imageUrl"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  add_foreign_key "orders", "customers"
-  add_foreign_key "payments", "orders"
 end
