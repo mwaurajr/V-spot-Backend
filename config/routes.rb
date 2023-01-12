@@ -5,7 +5,7 @@ Rails.application.routes.draw do
   # root "articles#index"
      #client
  post "/clients/signup", to: "clients#create"
- get "/clients/:id", to: "clients#show"
+ get "/clients/me", to: "clients#show"
  get "/clients", to: "clients#index"
 
 
@@ -16,8 +16,8 @@ Rails.application.routes.draw do
  delete "/managers/logout", to: "sessions#manager_destroy_session"
 
  #manager
- post "/manager/signup", to: "managers#create"
+ post "/managers/signup", to: "managers#create"
  get "/managers", to: "managers#index"
- get "/managers/:id", to: "managers#show"
+ get "/managers/me", to: "managers#show"
 
 end

@@ -1,4 +1,5 @@
 class SessionsController < ApplicationController
+  
     def client_login_session
     client = Client.find_by(email: params[:email])
     if client&.authenticate(params[:password])

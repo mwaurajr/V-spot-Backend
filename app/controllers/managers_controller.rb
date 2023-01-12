@@ -7,6 +7,12 @@ class ManagersController < ApplicationController
         render json: manager, status: :ok 
     end
 
+    def create
+        manager = Manager.create(manager_params)
+        session[:manager_id] = manager.id
+        render json: manager, status: :created
+    end
+
     def show
         manager = Manager.find_by(id: session[:manager_id])
         if manager
@@ -16,16 +22,10 @@ class ManagersController < ApplicationController
         end
     end
 
-    def create
-        manager = Manager.create!(manager_params)
-        session[:manager_id] = manager.id
-        render json: manager, status: :created
-    end
-
     private
 
-    def advocate_params
-        params.permit(:name, :username, :age, :address, :phoneNumber, :email, :password, :password_confirmation)
+    def manager_params
+        params.permit(:username, :email, :password, :password_confirmation)
     end
 
     def render_record_invalid(e)
