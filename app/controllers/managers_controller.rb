@@ -25,7 +25,7 @@ class ManagersController < ApplicationController
     private
 
     def manager_params
-        params.permit(:username, :email, :password, :password_confirmation)
+        params.permit(:name, :username, :age, :phoneNumber, :email, :address, :password)
     end
 
     def render_record_invalid(e)

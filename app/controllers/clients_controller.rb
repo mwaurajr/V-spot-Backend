@@ -28,7 +28,7 @@ class ClientsController < ApplicationController
     private
 
     def client_params
-        params.permit(:username, :email, :password)
+        params.permit(:name, :username, :age, :phoneNumber, :email, :address, :password)
     end
 
     def render_record_invalid_response(e)
