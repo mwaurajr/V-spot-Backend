@@ -1,5 +1,5 @@
 class SessionsController < ApplicationController
-  
+
     def client_login_session
     client = Client.find_by(email: params[:email])
     if client&.authenticate(params[:password])
@@ -13,7 +13,7 @@ class SessionsController < ApplicationController
   def manager_login_session
     manager = Manager.find_by(email: params[:email])
     if manager&.authenticate(params[:password])
-        sessions[:manager_id] = manager.id
+        session[:manager_id] = manager.id
         render json: manager, status: :ok
     else
         render json: {errors: ["Invalid username or password"]}, status: :unauthorized

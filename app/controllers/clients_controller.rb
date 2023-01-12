@@ -1,14 +1,20 @@
 class ClientsController < ApplicationController
-     #rescue_from ActiveRecord::RecordInvalid, with: :render_record_invalid
-    #rescue_from ActiveRecord::RecordNotFound, with: :render_record_not_found
 
-    def index
-        client = Client.all
-        render json: client, status: :ok 
-    end
+    #   skip_before_action :is_doc, only: [:create]
+    #   skip_before_action :authorize, only: [:create]
 
-    def create
-        client = Client.create!(client_params)
+
+  def index
+    render json: Client.all, status: :ok
+  end
+
+  def show
+    client = Client.find(params[:id])
+    render json: client, status: :ok
+  end
+
+  def create
+        client = Client.create(user_params)
         session[:user_id] = client.id
         if client
         render json: client, status: :created
@@ -17,27 +23,17 @@ class ClientsController < ApplicationController
         end
     end
 
-    def show
-        client = Client.find_by(id: session[:user_id])
-        if client
-            render json: client, status: :ok
-        else 
-            render json: {error: "unauthorized"}, status: :unauthorized
-        end
-    end
 
-    private
+  def destroy
+    client = Client.find(params[:id])
+    client.destroy
+    head :no_content
+  end
 
-    def client_params
-        params.permit(:name, :username, :age, :email, :address, :phoneNumber, :password)
-    end
+  private
 
-    # def render_record_invalid(e)
-    #     render json: {errors: e.record.errors.full_messages}, status: :unprocessable_entity
-    # end
-
-    # def render_record_not_found(e)
-    #     render json: {errors: e.record.errors.full_messages}, status: :not_found
-    # end
+  def user_params
+    params.require(:client).permit(:name, :username, :email, :age, :address, :phoneNumber, :password)
+  end
 
 end

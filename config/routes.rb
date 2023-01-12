@@ -1,12 +1,15 @@
 Rails.application.routes.draw do
+  resources :reviews
+  resources :clients
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
   # Defines the root path route ("/")
   # root "articles#index"
      #client
- post "/clients/signup", to: "clients#create"
- get "/clients/me", to: "clients#show"
- get "/clients", to: "clients#index"
+ #post "/clients/signup", to: "clients#create"
+ resources :clients, only: [:index, :show, :create, :destroy]
+#  get "/clients/me", to: "clients#show"
+#  get "/clients", to: "clients#index"
 
 
  # Sessions
@@ -16,7 +19,8 @@ Rails.application.routes.draw do
  delete "/managers/logout", to: "sessions#manager_destroy_session"
 
  #manager
- post "/managers/signup", to: "managers#create"
+ #post "/managers/signup", to: "managers#create"
+ resources :managers, only: [:index, :show, :create, :destroy]
  get "/managers", to: "managers#index"
  get "/managers/me", to: "managers#show"
 
