@@ -8,7 +8,7 @@ class ManagersController < ApplicationController
     end
 
     def create
-        manager = Manager.create(manager_params)
+        manager = Manager.create!(manager_params)
         session[:manager_id] = manager.id
         render json: manager, status: :created
     end
@@ -25,7 +25,7 @@ class ManagersController < ApplicationController
     private
 
     def manager_params
-        params.permit(:name, :username, :age, :phoneNumber, :email, :address, :password)
+        params.require(:manager).permit(:name, :username, :email, :password, :password_confirmation)
     end
 
     def render_record_invalid(e)
