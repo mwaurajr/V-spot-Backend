@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :venues
+  resources :bookings
   resources :mpesas
 
   post "/stkpush", to: "mpesas#stkpush"
