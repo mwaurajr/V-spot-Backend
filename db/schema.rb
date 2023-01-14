@@ -10,9 +10,21 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_01_10_154207) do
+ActiveRecord::Schema[7.0].define(version: 2023_01_11_175747) do
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
   create_table "access_tokens", force: :cascade do |t|
     t.string "token"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "bookings", force: :cascade do |t|
+    t.string "start_date"
+    t.string "end_date"
+    t.string "booking_date"
+    t.integer "no_guest"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -23,6 +35,15 @@ ActiveRecord::Schema[7.0].define(version: 2023_01_10_154207) do
     t.string "amount"
     t.string "mpesaReceiptNumber"
     t.string "phoneNumber"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "venues", force: :cascade do |t|
+    t.string "price"
+    t.string "description"
+    t.string "location"
+    t.string "capacity"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
