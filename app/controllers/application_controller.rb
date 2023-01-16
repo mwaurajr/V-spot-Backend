@@ -1,4 +1,5 @@
 class ApplicationController < ActionController::API
+
     include ActionController::Cookies
      
     def authorize
@@ -7,4 +8,10 @@ class ApplicationController < ActionController::API
         render json: { errors: ["Not authorized"] }, status: :unauthorized unless @current_user
     end
     
+
+    # skip_before_action :verify_authenticity_token
+    include ActionController::Cookies
+
+
+
 end
