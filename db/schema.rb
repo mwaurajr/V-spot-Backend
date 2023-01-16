@@ -10,6 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
+
 ActiveRecord::Schema[7.0].define(version: 2023_01_12_131923) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -22,9 +23,27 @@ ActiveRecord::Schema[7.0].define(version: 2023_01_12_131923) do
     t.string "phoneNumber"
     t.string "email"
     t.string "password_digest"
+
+ActiveRecord::Schema[7.0].define(version: 2023_01_11_175747) do
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
+  create_table "access_tokens", force: :cascade do |t|
+    t.string "token"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
+
+  create_table "bookings", force: :cascade do |t|
+    t.string "start_date"
+    t.string "end_date"
+    t.string "booking_date"
+    t.integer "no_guest"
+
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
 
   create_table "managers", force: :cascade do |t|
     t.string "name"
@@ -34,9 +53,18 @@ ActiveRecord::Schema[7.0].define(version: 2023_01_12_131923) do
     t.string "phoneNumber"
     t.string "email"
     t.string "password_digest"
+
+  create_table "mpesas", force: :cascade do |t|
+    t.string "checkoutRequestID"
+    t.string "merchantRequestID"
+    t.string "amount"
+    t.string "mpesaReceiptNumber"
+    t.string "phoneNumber"
+
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
+
 
   create_table "reviews", force: :cascade do |t|
     t.string "description"
@@ -48,4 +76,15 @@ ActiveRecord::Schema[7.0].define(version: 2023_01_12_131923) do
   end
 
   add_foreign_key "reviews", "clients"
+
+  create_table "venues", force: :cascade do |t|
+    t.string "price"
+    t.string "description"
+    t.string "location"
+    t.string "capacity"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+
 end

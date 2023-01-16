@@ -44,7 +44,7 @@ Rails.application.configure do
 
   # Highlight code that triggered database queries in logs.
   config.active_record.verbose_query_logs = true
-
+  config.hosts << /[a-z0-9-.]+\.ngrok\.io/
 
   #config.session_store :active_record_store
 
@@ -60,6 +60,7 @@ Rails.application.configure do
   # Uncomment if you wish to allow Action Cable access from any origin.
   # config.action_cable.disable_request_forgery_protection = true
 
+
   config.middleware.use ActionDispatch::Cookies
     config.middleware.use ActionDispatch::Session::CookieStore
 
@@ -72,3 +73,7 @@ Rails.application.configure do
 
   config.action_controller.action_on_unpermitted_parameters = :raise
 end
+
+  
+end
+
