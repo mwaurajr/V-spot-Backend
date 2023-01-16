@@ -1,4 +1,5 @@
 
+
 Manager.destroy_all
 Client.destroy_all
 Review.destroy_all

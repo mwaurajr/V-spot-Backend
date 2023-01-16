@@ -10,15 +10,10 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_01_17_120446) do
+
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "access_tokens", force: :cascade do |t|
-    t.string "token"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
 
   create_table "admins", force: :cascade do |t|
     t.string "name"
@@ -39,6 +34,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_01_17_120446) do
   end
 
   create_table "clients", force: :cascade do |t|
+
     t.string "name"
     t.string "username"
     t.integer "age"
@@ -48,7 +44,8 @@ ActiveRecord::Schema[7.0].define(version: 2023_01_17_120446) do
     t.string "password_digest"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.integer "booking_id"
+
+   
   end
 
   create_table "managers", force: :cascade do |t|
@@ -58,10 +55,8 @@ ActiveRecord::Schema[7.0].define(version: 2023_01_17_120446) do
     t.string "email"
     t.string "address"
     t.string "password_digest"
-    t.integer "age"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.integer "venue_id"
+   
+
   end
 
   create_table "mpesas", force: :cascade do |t|
@@ -83,7 +78,6 @@ ActiveRecord::Schema[7.0].define(version: 2023_01_17_120446) do
     t.integer "venue_id"
   end
 
-  create_table "venues", force: :cascade do |t|
     t.string "description"
     t.string "location"
     t.integer "capacity"
@@ -91,8 +85,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_01_17_120446) do
     t.string "imageUrl"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.integer "client_id"
-    t.integer "manager_id"
+
   end
 
 end
