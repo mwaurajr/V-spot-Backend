@@ -1,6 +1,6 @@
 class Venue < ApplicationRecord
-    # belongs_to :manager
-    # has_many :clients through: :reviewes
+     belongs_to :manager
+     has_many :clients through: :reviews
     # has_many :bookings
 
 

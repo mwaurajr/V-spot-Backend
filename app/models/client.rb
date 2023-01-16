@@ -3,4 +3,5 @@ class Client < ApplicationRecord
     validates :username, uniqueness: true
 
     has_many :reviews
+    has_many :venues through :reviews
 end

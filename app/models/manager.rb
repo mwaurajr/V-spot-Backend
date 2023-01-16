@@ -4,5 +4,6 @@ class Manager < ApplicationRecord
      validates :username, uniqueness: true
 
      #validates :terms_of_service, acceptance: true
-     #has_many_attached :venues
+     has_many :venues
+     has_many :clients through :venues
 end
