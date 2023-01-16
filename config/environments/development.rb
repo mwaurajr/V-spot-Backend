@@ -54,4 +54,15 @@ Rails.application.configure do
 
   # Uncomment if you wish to allow Action Cable access from any origin.
   # config.action_cable.disable_request_forgery_protection = true
+  config.middleware.use ActionDispatch::Cookies
+    config.middleware.use ActionDispatch::Session::CookieStore
+
+    # Use SameSite=Strict for all cookies to help protect against CSRF
+    # https://owasp.org/www-community/SameSite
+    config.action_dispatch.cookies_same_site_protection = :strict
+
+    # Initialize configuration defaults for originally generated Rails version.
+    config.load_defaults 6.1
+
+  config.action_controller.action_on_unpermitted_parameters = :raise
 end
