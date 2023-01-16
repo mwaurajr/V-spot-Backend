@@ -34,6 +34,44 @@ ActiveRecord::Schema[7.0].define(version: 2023_01_12_032710) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["email"], name: "index_users_on_email", unique: true
+
+ActiveRecord::Schema[7.0].define(version: 2023_01_11_175747) do
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
+  create_table "access_tokens", force: :cascade do |t|
+    t.string "token"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "bookings", force: :cascade do |t|
+    t.string "start_date"
+    t.string "end_date"
+    t.string "booking_date"
+    t.integer "no_guest"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "mpesas", force: :cascade do |t|
+    t.string "checkoutRequestID"
+    t.string "merchantRequestID"
+    t.string "amount"
+    t.string "mpesaReceiptNumber"
+    t.string "phoneNumber"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "venues", force: :cascade do |t|
+    t.string "price"
+    t.string "description"
+    t.string "location"
+    t.string "capacity"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+
   end
 
 end
