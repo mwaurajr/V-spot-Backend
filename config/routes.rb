@@ -13,6 +13,21 @@ Rails.application.routes.draw do
 
   # Defines the root path route ("/")
   # root "articles#index"
+
+  resources :users
+  post "/login", to: "sessions#create"
+  post "/sign_up", to: "users#create"
+  get "/me", to: "users#show"
+  delete "/logout", to: "sessions#destroy"
+
+  resources :admins , only: [:index, :show, :create, :destroy]
+  post "/admin/login", to: "sessions#create_admin"
+  post "/admin/sign_up", to: "admins#create"
+  get "/admin/me", to: "admins#show"
+  delete "admin/logout", to: "sessions#destroy_admin"
+
+
+
      #client
  #post "/clients/signup", to: "clients#create"
  resources :clients, only: [:index, :show, :create, :destroy]
@@ -31,5 +46,6 @@ Rails.application.routes.draw do
  resources :managers, only: [:index, :show, :create, :destroy]
  get "/managers", to: "managers#index"
  get "/managers/me", to: "managers#show"
+
 
 end
