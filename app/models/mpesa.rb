@@ -1,3 +1,0 @@
-class Mpesa < ApplicationRecord
-    
-end
