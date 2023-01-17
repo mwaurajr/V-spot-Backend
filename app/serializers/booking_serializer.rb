@@ -1,3 +1,3 @@
 class BookingSerializer < ActiveModel::Serializer
-  attributes :id, :venue_id, :start_time, :end_time 
+  attributes :id, :start_time, :end_time, :no_guest, :venue_id
 end

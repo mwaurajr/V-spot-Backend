@@ -1,11 +1,11 @@
 Rails.application.routes.draw do
+  resources :bookings
   resources :managers
   resources :venues
   resources :admins
 
   resources :reviews, only: [:index, :show, :create, :destroy]
 
-  resources :bookings
   resources :mpesas
 
   post "/stkpush", to: "mpesas#stkpush"
