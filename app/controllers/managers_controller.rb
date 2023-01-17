@@ -1,4 +1,9 @@
 class ManagersController < ApplicationController
+<<<<<<< HEAD
+=======
+#   skip_before_action :is_manager, only: [:create]
+#   skip_before_action :authorize, only: [:create]
+>>>>>>> 3be6060 (changes)
 
 #   skip_before_action :is_manager, only: [:create]
 #   skip_before_action :authorize, only: [:create]
