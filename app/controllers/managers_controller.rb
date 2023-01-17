@@ -1,7 +1,7 @@
 class ManagersController < ApplicationController
-#   skip_before_action :is_doc, only: [:create]
-#   skip_before_action :authorize, only: [:create]
 
+#   skip_before_action :is_manager, only: [:create]
+#   skip_before_action :authorize, only: [:create]
 
   def index
     render json: Manager.all, status: :ok
@@ -22,7 +22,6 @@ class ManagersController < ApplicationController
         end
     end
 
-
   def destroy
     manager = Manager.find(params[:id])
     manager.destroy
@@ -30,7 +29,7 @@ class ManagersController < ApplicationController
   end
 
   private
-
+  
   def user_params
     params.require(:manager).permit(:name, :username, :email, :age, :address, :phoneNumber, :password)
   end

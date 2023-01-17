@@ -10,48 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-
-ActiveRecord::Schema[7.0].define(version: 2023_01_12_032710) do
-  # These are extensions that must be enabled in order to support this database
-  enable_extension "plpgsql"
-
-  create_table "admins", force: :cascade do |t|
-    t.text "first_name"
-    t.text "last_name"
-    t.text "email", null: false
-    t.text "password_digest", null: false
-    t.text "role"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["email"], name: "index_admins_on_email", unique: true
-  end
-
-  create_table "users", force: :cascade do |t|
-    t.text "first_name"
-    t.text "last_name"
-    t.text "email", null: false
-    t.text "password_digest", null: false
-    t.text "role"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["email"], name: "index_users_on_email", unique: true
-
-
-ActiveRecord::Schema[7.0].define(version: 2023_01_12_131923) do
-  # These are extensions that must be enabled in order to support this database
-  enable_extension "plpgsql"
-
-  create_table "clients", force: :cascade do |t|
-    t.string "name"
-    t.string "username"
-    t.integer "age"
-    t.string "address"
-    t.string "phoneNumber"
-    t.string "email"
-    t.string "password_digest"
-
-
-ActiveRecord::Schema[7.0].define(version: 2023_01_11_175747) do
+ActiveRecord::Schema[7.0].define(version: 2023_01_17_105247) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -61,18 +20,26 @@ ActiveRecord::Schema[7.0].define(version: 2023_01_11_175747) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "bookings", force: :cascade do |t|
-    t.string "start_date"
-    t.string "end_date"
-    t.string "booking_date"
-    t.integer "no_guest"
-
+  create_table "admins", force: :cascade do |t|
+    t.string "name"
+    t.string "username"
+    t.string "email"
+    t.string "password_digest"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
+  create_table "bookings", force: :cascade do |t|
+    t.string "start_time"
+    t.string "end_time"
+    t.string "booking_time"
+    t.integer "no_guest"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer "venue_id"
+  end
 
-  create_table "managers", force: :cascade do |t|
+  create_table "clients", force: :cascade do |t|
     t.string "name"
     t.string "username"
     t.integer "age"
@@ -80,6 +47,23 @@ ActiveRecord::Schema[7.0].define(version: 2023_01_11_175747) do
     t.string "phoneNumber"
     t.string "email"
     t.string "password_digest"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer "booking_id"
+  end
+
+  create_table "managers", force: :cascade do |t|
+    t.string "name"
+    t.string "username"
+    t.string "phoneNumber"
+    t.string "email"
+    t.string "address"
+    t.string "password_digest"
+    t.integer "age"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer "venue_id"
+  end
 
   create_table "mpesas", force: :cascade do |t|
     t.string "checkoutRequestID"
@@ -87,32 +71,29 @@ ActiveRecord::Schema[7.0].define(version: 2023_01_11_175747) do
     t.string "amount"
     t.string "mpesaReceiptNumber"
     t.string "phoneNumber"
-
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
-
 
   create_table "reviews", force: :cascade do |t|
     t.string "description"
     t.integer "ratings"
-    t.bigint "client_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["client_id"], name: "index_reviews_on_client_id"
+    t.integer "client_id"
+    t.integer "venue_id"
   end
-
-  add_foreign_key "reviews", "clients"
 
   create_table "venues", force: :cascade do |t|
-    t.string "price"
     t.string "description"
     t.string "location"
-    t.string "capacity"
+    t.integer "capacity"
+    t.integer "price"
+    t.string "imageUrl"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-
+    t.integer "client_id"
+    t.integer "manager_id"
   end
-
 
 end

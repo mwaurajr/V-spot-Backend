@@ -1,3 +1,3 @@
 class ManagerSerializer < ActiveModel::Serializer
-  attributes :id, :name, :username, :age, :address, :phoneNumber, :email, :password_digest
+  attributes :id, :name, :username, :phoneNumber, :email, :address, :password_digest, :age
 end

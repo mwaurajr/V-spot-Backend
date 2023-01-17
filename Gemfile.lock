@@ -170,15 +170,12 @@ GEM
     rake (13.0.6)
     reline (0.3.2)
       io-console (~> 0.5)
-
-    rexml (3.2.5)
-
     rest-client (2.1.0)
       http-accept (>= 1.7.0, < 2.0)
       http-cookie (>= 1.0.2, < 2.0)
       mime-types (>= 1.16, < 4.0)
       netrc (~> 0.8)
-
+    rexml (3.2.5)
     thor (1.2.1)
     timeout (0.3.1)
     tzinfo (2.0.5)
@@ -197,19 +194,13 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-
-  bcrypt
-  debug
-  paypal-sdk-rest
-  pg
-
   active_model_serializers
   bcrypt (~> 3.1.7)
   debug
   faker
   jwt
+  paypal-sdk-rest
   pg (~> 1.1)
-
   puma (~> 5.0)
   rack-cors
   rails (~> 7.0.4)
@@ -217,7 +208,7 @@ DEPENDENCIES
   tzinfo-data
 
 RUBY VERSION
-   ruby 2.7.4p191
+   ruby 2.7.6p219
 
 BUNDLED WITH
    2.1.4

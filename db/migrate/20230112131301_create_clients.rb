@@ -8,7 +8,6 @@ class CreateClients < ActiveRecord::Migration[7.0]
       t.string :phoneNumber
       t.string :email
       t.string :password_digest
-      #  t.belongs_to :booking, null: false, foreign_key: true
 
 
       t.timestamps

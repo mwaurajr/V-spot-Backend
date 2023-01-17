@@ -3,7 +3,6 @@ class CreateReviews < ActiveRecord::Migration[7.0]
     create_table :reviews do |t|
       t.string :description
       t.integer :ratings
-      t.belongs_to :client, null: false, foreign_key: true
 
       t.timestamps
     end

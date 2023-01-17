@@ -1,9 +1,8 @@
 class Venue < ApplicationRecord
-     belongs_to :manager
-     has_many :clients through: :reviews
-    # has_many :bookings
+
+    belongs_to :manager
+    has_many :bookings
+    has_many :clients, through: :reviews
 
 
-
-    validates :name, presence: true
 end
