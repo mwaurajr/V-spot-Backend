@@ -1,9 +1,4 @@
 class ManagersController < ApplicationController
-<<<<<<< HEAD
-=======
-#   skip_before_action :is_manager, only: [:create]
-#   skip_before_action :authorize, only: [:create]
->>>>>>> 3be6060 (changes)
 
 #   skip_before_action :is_manager, only: [:create]
 #   skip_before_action :authorize, only: [:create]
@@ -14,7 +9,7 @@ class ManagersController < ApplicationController
 
   def show
     manager = Manager.find(params[:id])
-    render json: manager, status: :ok
+    render json: manager, serializer: ManagerandVenueSerializer 
   end
 
   def create

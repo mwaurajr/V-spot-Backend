@@ -1,8 +1,9 @@
 class ReviewsController < ApplicationController
+
          def index
         review = Review.all
-        render json: Review, status: :ok
-    end
+        render json: review, status: :ok
+        end
 
     def show
     review = Review.find_by(id: params[:id])
@@ -42,6 +43,6 @@ class ReviewsController < ApplicationController
   private
 
   def review_params
-    params.permit(:description, :ratings)
+    params.require(:reviews).permit(:description, :ratings, :client_id, :venue_id)
   end
 end
