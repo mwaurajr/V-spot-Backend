@@ -105,10 +105,6 @@ Client.create([
 puts "Done Seeding Clients"
 
 
-
-
-
-
 puts "Seeding Venues....."
 
     Venue.create!([
@@ -346,11 +342,12 @@ end
 puts "Done Seeding Bookings"
 
 puts "Seeding Reviews....."
-Review.create!([
+
+Review.create([
     {
         description: "It is an awesome venue, we had a good time",
         client_id: 1,
-        venue_id: 2,
+         venue_id: 2,
         ratings: 4
     },
 

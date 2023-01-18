@@ -5,7 +5,7 @@ class VenuesController < ApplicationController
       end
     def show
         venue = Venue.find_by(id: params[:id])  
-        render json: venue
+        render json: venue, serializer: VenueandReviewSerializer
     end
     def create
         render json: Venue.create!(venue_params), status: :created
