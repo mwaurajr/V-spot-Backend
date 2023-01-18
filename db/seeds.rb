@@ -104,32 +104,6 @@ Client.create([
 ])
 puts "Done Seeding Clients"
 
-puts "Seeding Reviews....."
-
-Review.create!([
-    {
-        description: "It is an awesome venue, we had a good time",
-        client_id: 1,
-         venue_id: 2,
-        ratings: 4
-    },
-
-    {
-        description: "It is a nice place with enough space for hosting any event",
-        client_id: 2,
-        venue_id: 1,
-        ratings: 5
-    },
-
-    {
-        description: "We had a really nice time, I would recommend this venue to anyone planning to host an event especially wedding or party",
-        client_id: 3,
-        venue_id: 3,
-        ratings: 5
-    }
-])
-
-puts "Done Seeding Reviews"
 
 
 puts "Seeding Venues....."
@@ -164,6 +138,34 @@ puts "Seeding Bookings....."
 end        
 
 puts "Done Seeding Bookings"
+
+puts "Seeding Reviews....."
+
+Review.create([
+    {
+        description: "It is an awesome venue, we had a good time",
+        client_id: 1,
+         venue_id: 2,
+        ratings: 4
+    },
+
+    {
+        description: "It is a nice place with enough space for hosting any event",
+        client_id: 2,
+        venue_id: 1,
+        ratings: 5
+    },
+
+    {
+        description: "We had a really nice time, I would recommend this venue to anyone planning to host an event especially wedding or party",
+        client_id: 3,
+        venue_id: 3,
+        ratings: 5
+    }
+])
+
+puts "Done Seeding Reviews"
+
 
 puts "done seeding"
 
