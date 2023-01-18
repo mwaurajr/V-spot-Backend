@@ -1,5 +1,5 @@
 class ReviewsController < ApplicationController
-    def index
+         def index
         review = Review.all
         render json: Review, status: :ok
     end

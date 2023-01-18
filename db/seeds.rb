@@ -104,45 +104,225 @@ Client.create([
 ])
 puts "Done Seeding Clients"
 
-puts "Seeding Reviews....."
 
-Review.create!([
-    {
-        description: "It is an awesome venue, we had a good time",
-        client_id: 1,
-         venue_id: 2,
-        ratings: 4
-    },
 
-    {
-        description: "It is a nice place with enough space for hosting any event",
-        client_id: 2,
-        venue_id: 1,
-        ratings: 5
-    },
 
-    {
-        description: "We had a really nice time, I would recommend this venue to anyone planning to host an event especially wedding or party",
-        client_id: 3,
-        venue_id: 3,
-        ratings: 5
-    }
-])
-
-puts "Done Seeding Reviews"
 
 
 puts "Seeding Venues....."
 30.times do 
-    Venue.create(
-  price: Faker::Commerce.price,
+    Venue.create!([
+
+  {
+    price: 10000,
   description: Faker::Lorem.paragraph,
-  location: Faker::Address.city,
+  location: "Nairobi",
   capacity: Faker::Number.between(from: 10, to: 300),
-  imageUrl: Faker::Avatar.image,
+  imageUrl: "https://www.pinterest.com/pin/708261478917481187/",
   client_id: rand(1..Client.all.size),
   manager_id: rand(1..Manager.all.size)
-)
+  },
+
+  {
+    price: 9000,
+  description: Faker::Lorem.paragraph,
+  location: "Mombasa",
+  capacity: Faker::Number.between(from: 10, to: 300),
+  imageUrl: "https://www.pinterest.com/pin/161214861655101531/",
+  client_id: rand(1..Client.all.size),
+  manager_id: rand(1..Manager.all.size)
+  },
+
+  {
+    price: 8000,
+  description: Faker::Lorem.paragraph,
+  location: "Desmond Tutu",
+  capacity: Faker::Number.between(from: 10, to: 300),
+  imageUrl: "https://www.pinterest.com/pin/211174975171735/",
+  client_id: rand(1..Client.all.size),
+  manager_id: rand(1..Manager.all.size)
+  },
+
+  {
+    price: 7000,
+  description: Faker::Lorem.paragraph,
+  location: "Merica",
+  capacity: Faker::Number.between(from: 10, to: 300),
+  imageUrl: "https://www.pinterest.com/pin/383509724529212900/",
+  client_id: rand(1..Client.all.size),
+  manager_id: rand(1..Manager.all.size)
+  },
+
+  {
+    price: 4000,
+  description: Faker::Lorem.paragraph,
+  location: "Nakuru",
+  capacity: Faker::Number.between(from: 10, to: 300),
+  imageUrl: "https://www.pinterest.com/pin/1017039528323605108/"  ,
+  client_id: rand(1..Client.all.size),
+  manager_id: rand(1..Manager.all.size)
+  },
+
+  {
+    price: 5000,
+  description: Faker::Lorem.paragraph,
+  location: "Buraha Zenoni",
+  capacity: Faker::Number.between(from: 10, to: 300),
+  imageUrl: "https://www.pinterest.com/pin/507710558004414104/",
+  client_id: rand(1..Client.all.size),
+  manager_id: rand(1..Manager.all.size)
+  },
+
+  {
+    price: 10010,
+  description: Faker::Lorem.paragraph,
+  location: "GrandWinston",
+  capacity: Faker::Number.between(from: 10, to: 300),
+  imageUrl: "https://www.pinterest.com/pin/708261478917481187/",
+  client_id: rand(1..Client.all.size),
+  manager_id: rand(1..Manager.all.size)
+  },
+
+  {
+    price: 1005880,
+  description: Faker::Lorem.paragraph,
+  location: "The Emory",
+  capacity: Faker::Number.between(from: 10, to: 300),
+  imageUrl: "https://www.pinterest.com/pin/5348093296837619/"  ,
+  client_id: rand(1..Client.all.size),
+  manager_id: rand(1..Manager.all.size)
+  },
+
+  {
+    price: 10050,
+  description: Faker::Lorem.paragraph,
+  location: "NuruPalace",
+  capacity: Faker::Number.between(from: 10, to: 300),
+  imageUrl: "https://www.pinterest.com/pin/395753886017160086/"  ,
+  client_id: rand(1..Client.all.size),
+  manager_id: rand(1..Manager.all.size)
+  },
+
+  {
+    price: 100890,
+  description: Faker::Lorem.paragraph,
+  location: "Eldoret",
+  capacity: Faker::Number.between(from: 10, to: 300),
+  imageUrl: "https://www.pinterest.com/pin/87749892732217631/",
+  client_id: rand(1..Client.all.size),
+  manager_id: rand(1..Manager.all.size)
+  },
+
+  {
+    price: 100000,
+  description: Faker::Lorem.paragraph,
+  location: "Kakamega",
+  capacity: Faker::Number.between(from: 10, to: 300),
+  imageUrl: "https://www.pinterest.com/pin/103723597659532070/"  ,
+  client_id: rand(1..Client.all.size),
+  manager_id: rand(1..Manager.all.size)
+  },
+
+  {
+    price: 105400,
+  description: Faker::Lorem.paragraph,
+  location: "Kiambu",
+  capacity: Faker::Number.between(from: 10, to: 300),
+  imageUrl: "https://www.pinterest.com/pin/116178865373536458/"  ,
+  client_id: rand(1..Client.all.size),
+  manager_id: rand(1..Manager.all.size)
+  },
+
+  {
+    price: 10050,
+  description: Faker::Lorem.paragraph,
+  location: "Milimami APart",
+  capacity: Faker::Number.between(from: 10, to: 300),
+  imageUrl: "https://www.pinterest.com/pin/622693085984499573/ ",
+  client_id: rand(1..Client.all.size),
+  manager_id: rand(1..Manager.all.size)
+  },
+
+  {
+    price: 14000,
+  description: Faker::Lorem.paragraph,
+  location: "Thika",
+  capacity: Faker::Number.between(from: 10, to: 300),
+  imageUrl: "https://www.pinterest.com/pin/155303887533749094/",
+  client_id: rand(1..Client.all.size),
+  manager_id: rand(1..Manager.all.size)
+  },
+
+  {
+    price: 14000,
+  description: Faker::Lorem.paragraph,
+  location: "Kisumu",
+  capacity: Faker::Number.between(from: 10, to: 300),
+  imageUrl: "https://www.pinterest.com/pin/449937819034352088/",
+  client_id: rand(1..Client.all.size),
+  manager_id: rand(1..Manager.all.size)
+  },
+
+  {
+    price: 10400,
+  description: Faker::Lorem.paragraph,
+  location: "Kileleshwa",
+  capacity: Faker::Number.between(from: 10, to: 300),
+  imageUrl: "https://www.pinterest.com/pin/303359724911963707/",
+  client_id: rand(1..Client.all.size),
+  manager_id: rand(1..Manager.all.size)
+  },
+
+  {
+    price: 10040,
+  description: Faker::Lorem.paragraph,
+  location: "Lamu",
+  capacity: Faker::Number.between(from: 10, to: 300),
+  imageUrl: "https://www.pinterest.com/pin/358388082858960323/",
+  client_id: rand(1..Client.all.size),
+  manager_id: rand(1..Manager.all.size)
+  },
+
+  {
+    price: 10000,
+  description: Faker::Lorem.paragraph,
+  location: "Malindi",
+  capacity: Faker::Number.between(from: 10, to: 300),
+  imageUrl: "https://www.pinterest.com/pin/304907837270619055/",
+  client_id: rand(1..Client.all.size),
+  manager_id: rand(1..Manager.all.size)
+  },
+
+  {
+    price: 10500,
+  description: Faker::Lorem.paragraph,
+  location: "Kwale",
+  capacity: Faker::Number.between(from: 10, to: 300),
+  imageUrl: "https://www.pinterest.com/pin/341288477985566046/",
+  client_id: rand(1..Client.all.size),
+  manager_id: rand(1..Manager.all.size)
+  },
+
+  {
+    price: 10200,
+  description: Faker::Lorem.paragraph,
+  location: "Taita Taveta",
+  capacity: Faker::Number.between(from: 10, to: 300),
+  imageUrl: "https://www.pinterest.com/pin/144959681741921800/",
+  client_id: rand(1..Client.all.size),
+  manager_id: rand(1..Manager.all.size)
+  },
+
+  {
+    price: 10030,
+  description: Faker::Lorem.paragraph,
+  location: "Githurai",
+  capacity: Faker::Number.between(from: 10, to: 300),
+  imageUrl: "https://www.pinterest.com/pin/198580664809473816/",
+  client_id: rand(1..Client.all.size),
+  manager_id: rand(1..Manager.all.size)
+  }
+])
 end
 puts "Done Seeding Venues"
 
@@ -164,6 +344,32 @@ puts "Seeding Bookings....."
 end        
 
 puts "Done Seeding Bookings"
+
+puts "Seeding Reviews....."
+Review.create!([
+    {
+        description: "It is an awesome venue, we had a good time",
+        client_id: 1,
+        venue_id: 2,
+        ratings: 4
+    },
+
+    {
+        description: "It is a nice place with enough space for hosting any event",
+        client_id: 2,
+        venue_id: 1,
+        ratings: 5
+    },
+
+    {
+        description: "We had a really nice time, I would recommend this venue to anyone planning to host an event especially wedding or party",
+        client_id: 3,
+        venue_id: 3,
+        ratings: 5
+    }
+])
+
+puts "Done Seeding Reviews"
 
 puts "done seeding"
 
