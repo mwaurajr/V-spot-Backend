@@ -1,6 +1,3 @@
-
-<<<<<<< HEAD
-=======
 # This file should contain all the record creation needed to seed the database with its default values.
 # The data can then be loaded with the bin/rails db:seed command (or created alongside the database with db:setup).
 #
@@ -8,13 +5,9 @@
 #
 #   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
 #   Character.create(name: "Luke", movie: movies.first)
-# db/seeds.rb
-# user = User.new({ :first_name => "James", :last_name => "Bond", :email => "jamesbond@monster.com", :password => "agent007", :role => "manager" })
-# admin = Admin.new({ :first_name => "Admin", :last_name => "Bond", :email => "adminbond@monster.com", :password => "agent007", :role => "manager" })
-# user.hash_password
 
-# user.save
->>>>>>> 3be6060 (changes)
+
+
 
 Manager.destroy_all
 Client.destroy_all
@@ -23,22 +16,19 @@ Admin.destroy_all
 
 puts "start seeding"
 
+puts "Seeding Admin......"
 Admin.create([
     {
         name: "Frankline chebukati",
         username: "frank",
         email: "frank@venuspot.admin",
         password: "Frank@345"
-    },
-
-    {
-        name: "Frankline chebukati",
-        username: "frank",
-        email: "frank@gmail.com",
-        password: "Frank@3"
     }
 ])
 
+puts "Done Seeding Admin"
+
+puts "Seeding managers........"
 Manager.create([
      {
          name: "Williams Emmanuel",
@@ -74,6 +64,10 @@ Manager.create([
      }
 ]) 
 
+puts "Done Seeding Managers"
+
+puts "Seeding Clients......."
+
 Client.create([
     {
       name: "Ibrahim mutua",
@@ -83,7 +77,7 @@ Client.create([
       phoneNumber: "+254727421437",
       email: "ibrahimmutua@gmail.com",
       password: "fdtheg143",
-      booking_id: 3
+    #   booking_id: 3
     },
 
     {
@@ -94,7 +88,7 @@ Client.create([
        phoneNumber: "+254726574868",
        email: "henrykawira@gmail.com",
        password: "Xukhai25",
-        booking_id: 1
+        # booking_id: 1
     },
 
     {
@@ -105,11 +99,14 @@ Client.create([
       phoneNumber: "+254746782645",
       email: "pollaxkibet@gmail.com",
       password: "Polla273",
-      booking_id: 2
+    #   booking_id: 2
     }
 ])
+puts "Done Seeding Clients"
 
-Review.create([
+puts "Seeding Reviews....."
+
+Review.create!([
     {
         description: "It is an awesome venue, we had a good time",
         client_id: 1,
@@ -120,7 +117,7 @@ Review.create([
     {
         description: "It is a nice place with enough space for hosting any event",
         client_id: 2,
-         venue_id: 1,
+        venue_id: 1,
         ratings: 5
     },
 
@@ -132,6 +129,10 @@ Review.create([
     }
 ])
 
+puts "Done Seeding Reviews"
+
+
+puts "Seeding Venues....."
 30.times do 
     Venue.create(
   price: Faker::Commerce.price,
@@ -143,15 +144,26 @@ Review.create([
   manager_id: rand(1..Manager.all.size)
 )
 end
-30.times do 
-    Booking.create(
-    no_guest: Faker::Number.between(from: 10, to: 300),
-    venue_id: rand(1..Venue.all.size),
-    start_time: DateTime.new(2022,6,rand(1..30),rand(1..19),rand(1.60)),
-    end_time: DateTime.new(2022,6,rand(1..30),rand(6..19),rand(1.60))
-)
-end
+puts "Done Seeding Venues"
 
+
+puts "Seeding Bookings....."
+30.times do 
+    Booking.create!([
+        { 
+            client_id: rand(1..Client.all.size),
+            no_guest: Faker::Number.between(from: 10, to: 300),
+            venue_id: rand(1..Venue.all.size),
+            start_time: DateTime.new(2022,6,rand(1..30),rand(1..19),rand(1.60)),
+            end_time: DateTime.new(2022,6,rand(1..30),rand(6..19),rand(1.60))
+             
+           
+        }
+    ]
+)     
+end        
+
+puts "Done Seeding Bookings"
 
 puts "done seeding"
 

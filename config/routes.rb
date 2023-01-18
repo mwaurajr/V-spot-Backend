@@ -1,8 +1,5 @@
 Rails.application.routes.draw do
-  resources :bookings
-  resources :managers
-  resources :venues
-  resources :admins
+
 
   resources :reviews, only: [:index, :show, :create, :destroy]
 

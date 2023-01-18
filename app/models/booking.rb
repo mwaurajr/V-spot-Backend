@@ -1,7 +1,7 @@
 class Booking < ApplicationRecord
     belongs_to :client
     belongs_to :venue
-    validates :start_time, comparison: { greater_than_or_equal_to: :end_time }
+#     validates :start_time, comparison: { greater_than_or_equal_to: :end_time }
 #      validate :check_availability
 
 #   def check_availability

@@ -4,9 +4,7 @@ class Manager < ApplicationRecord
     
      has_many :clients, through: :venues
 
-<<<<<<< HEAD
    
-=======
      
 
      validates :terms_of_service, acceptance: true
@@ -16,5 +14,4 @@ class Manager < ApplicationRecord
      validates :username, uniqueness: true
      
      # has_many_attached :venues   for active_storage_attachment
->>>>>>> 3be6060 (changes)
 end
