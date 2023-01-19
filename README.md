@@ -1,34 +1,44 @@
-LIVE LINK
-========================================================
-- [Server](https://venuspot-production.up.railway.app/)
+# Cozybnb
+<div align="center">
+<img width="650" height="466.07" src='https://github.com/hannnmc/Cozybnb/blob/main/frontend/src/assets/images/product_readme/cozybnb_home.png' alt='' />
+</div>
 
-##### Prerequisites
+## Background
+<a href='https://cozy-bnb.herokuapp.com' alt=''>Cozybnb</a> is a near pixel perfect clone of Airbnb with many of the original functionalities such as creating a new listing, manage reservations, and leaving reviews. You can choose to signup for a new account, login with an existing account, or use a demo user to try-out the app. 
 
-The setups steps expect following tools installed on the system.
+## Technologies
+- React.js - frontend components
+- Redux.js - frontend state management
+- Ruby on Rails - backend controller and routing
+- Postgresql - database storage
+- AWS S3 - cloud image upload/storage
+- Google Map API - Map and location services
+- <a href='https://projects.wojtekmaj.pl/react-calendar/' target="_blank" rel="noopener noreferrer"> React-Calendar API </a>
 
-- Github
-- Ruby [2.7.4](https://github.com/ruby/www.ruby-lang.org)
-- Rails [7.0.4](https://github.com/rails/rails/tree/7-0-stable)
-- Postgresql [12+](https://www.digitalocean.com/community/tutorials/how-to-use-postgresql-with-your-ruby-on-rails-application-on-ubuntu-20-04)
+## Make a new reservation
+<img src='https://github.com/hannnmc/Cozybnb/blob/main/frontend/src/assets/images/product_readme/new_reservation.gif' alt='' />
+Reserve a new trip or delete an existing reservation.
 
-##### Check out the repository
+## Reserved dates
+<img src='https://github.com/hannnmc/Cozybnb/blob/main/frontend/src/assets/images/product_readme/blocked_dates.gif' alt='' />
+Reserved dates are blocked for new reservations.
 
-```bash
-git clone git@github.com:mwaurajr/VenuSpotBackend.git
-```
+## Write or delete reviews
+<img src='https://github.com/hannnmc/Cozybnb/blob/main/frontend/src/assets/images/product_readme/leave_review.gif' alt='' />
+Utilizing a star-rating review system.
 
-Backend Setup
-===============================================================
-##### 1. Install Ruby Gems
+## Responsive page
+<img src='https://github.com/hannnmc/Cozybnb/blob/main/frontend/src/assets/images/product_readme/responsiveness.gif' alt='' />
+Responsive homepage allows for optimal viewing in any screen size.
 
-```ruby
-bundle install
-```
+## Filtering listings
+<img src='https://github.com/hannnmc/Cozybnb/blob/main/frontend/src/assets/images/product_readme/filtering.gif' alt='' />
+Filter listings by minimum and maximum pricing with no latency.
 
-##### 3. Start the Rails server
+## Code snippets
+<img src='https://github.com/hannnmc/Cozybnb/blob/main/frontend/src/assets/images/product_readme/listingindex.png' alt='' />
+Index page listings, maps, and props threading.
 
-You can start the rails server using the command given below.
-
-```ruby
-bundle exec rails s
-```
+## Future directions
+- Location search bar
+- More listing filters
