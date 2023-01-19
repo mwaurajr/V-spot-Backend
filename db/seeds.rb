@@ -140,7 +140,7 @@ ApplicationRecord.transaction do
       lat: 40.773506142037114,
       lng: -73.96588646726212
     })
-    
+
     listing3 = Listing.create!({
       title: 'Best Views in Manhattan with Full Roof Top Access',
       description: "One of the best views of the city if not the best view of the city.  A newer luxury condo in the heart of the city.  Enjoyed everything the city has to offer,   Broadway plays walk to with in mins,  Madison Square Garden, Center Park,  high end shopping of 5th Ave and the best restaurant in the world unless you feel like a $1.00 slice of pizza Manhattan has that for you to.  Perfect home away from home for you and the family.",
@@ -189,6 +189,7 @@ ApplicationRecord.transaction do
       lat: 40.70376570566167, 
       lng: -73.9897054035584
     })
+    
     listing5 = Listing.create({
       title: "Time Square Manhattan Luxury Loft",
       description: "Have fun with the whole family at this stylish place.  Two bedroom 2 bathroom,  fully stock kitchen, washer and dryer.  Walk to Time Square, Central Park and Madison Square Garden and many more.  The best shopping and dinning in the city.",
