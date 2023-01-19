@@ -109,3 +109,73 @@ ApplicationRecord.transaction do
       lat: 40.7558606730357,
       lng: -74.00159449170306
     })
+
+    listing2 = Listing.create!({
+      title: '3 BD Manhattan High Life',
+      description: "Living the life of luxury in Manhattan Penthouse, with the best views of the city.",
+      price: Faker::Number.within(range: 500..800),
+      guests: 6,
+      bedrooms: 3,
+      beds: 4,
+      baths: 2,
+      address: '1 Park Ave',
+      city: 'Manhattan',
+      state: 'NY',
+      country: 'Kenya',
+      wifi: true,
+      parking: false,
+      kitchen: true,
+      dedicated_workspace: true,
+      prop_type:'Loft',
+      pets_allowed: true,
+      user_id: 5,
+      lat: 40.773506142037114,
+      lng: -73.96588646726212
+    })
+    listing3 = Listing.create!({
+      title: 'Best Views in Manhattan with Full Roof Top Access',
+      description: "One of the best views of the city if not the best view of the city.  A newer luxury condo in the heart of the city.  Enjoyed everything the city has to offer,   Broadway plays walk to with in mins,  Madison Square Garden, Center Park,  high end shopping of 5th Ave and the best restaurant in the world unless you feel like a $1.00 slice of pizza Manhattan has that for you to.  Perfect home away from home for you and the family.",
+      price: Faker::Number.within(range: 500..900),
+      guests: 5,
+      bedrooms: 2,
+      beds: 2,
+      baths: 2,
+      address: '12 Broadway st.',
+      city: 'Manhattan',
+      state: 'NY',
+      country: 'Kenya',
+      wifi: true,
+      parking: true,
+      kitchen: false,
+      dedicated_workspace: false,
+      prop_type: 'Loft',
+      pets_allowed: true,
+      user_id: 6,
+      lat: 40.721525397897885,
+      lng: -73.99980873460277
+    })
+    listing4 = Listing.create!({
+      title: 'Warm Contemporary Penthouse with Rooftop',
+      description: "Meet Casa Caeli by Cocoon Flex Spaces.
+      Casa Caeli is a quiet haven in the heart of Greenpoint, Brooklyn.
+      Our bestseller 3,000 square-foot penthouse loft offers an open layout on two floors, an abundance of natural light, unbeatable views of the Brooklyn and Manhattan Skyline, and possesses a bright and warm character with high-quality finishes that exude an elevated elegance.
+      ",
+      price: Faker::Number.within(range: 300..700),
+      guests: 6,
+      bedrooms: 3,
+      beds: 3,
+      baths: 3,
+      address: '100 Dumbo St.',
+      city: 'Dumbo',
+      state: 'NY',
+      country: 'Kenya',
+      wifi: true,
+      parking: true,
+      kitchen: true,
+      dedicated_workspace: true,
+      prop_type: 'Apartment',
+      pets_allowed: true,
+      user_id: 3,
+      lat: 40.70376570566167, 
+      lng: -73.9897054035584
+    })
