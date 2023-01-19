@@ -73,7 +73,7 @@ ApplicationRecord.transaction do
       birth_date: '03/05/1992',
       phone_number: '1234567897'
     )
-    
+
     user7 = User.create!(
       about: "",
       email: 'tommycuzy@icloud.com', 
@@ -83,6 +83,7 @@ ApplicationRecord.transaction do
       birth_date: '12/11/1994',
       phone_number: '1234567898'
     )
+
     user8 = User.create!(
       about: "",
       email: 'iheartgoogle@gmail.com', 
@@ -139,6 +140,7 @@ ApplicationRecord.transaction do
       lat: 40.773506142037114,
       lng: -73.96588646726212
     })
+    
     listing3 = Listing.create!({
       title: 'Best Views in Manhattan with Full Roof Top Access',
       description: "One of the best views of the city if not the best view of the city.  A newer luxury condo in the heart of the city.  Enjoyed everything the city has to offer,   Broadway plays walk to with in mins,  Madison Square Garden, Center Park,  high end shopping of 5th Ave and the best restaurant in the world unless you feel like a $1.00 slice of pizza Manhattan has that for you to.  Perfect home away from home for you and the family.",
