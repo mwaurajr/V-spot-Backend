@@ -59,7 +59,7 @@ class Api::ListingsController < ApplicationController
             :baths,
             :address,
             :city,
-            :state,
+            :town,
             :country,
             :wifi,
             :prop_type,

@@ -12,7 +12,7 @@ class CreateListings < ActiveRecord::Migration[7.0]
       t.integer :baths, null: false
       t.string :address, null: false
       t.string :city, null: false
-      t.string :state, null: false
+      t.string :town, null: false
       t.boolean :wifi, null: false, default: false
       t.boolean :parking, null: false, default: false
       t.boolean :kitchen, null: false, default: false

@@ -54,7 +54,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_11_29_221110) do
     t.integer "baths", null: false
     t.string "address", null: false
     t.string "city", null: false
-    t.string "state", null: false
+    t.string "town", null: false
     t.boolean "wifi", default: false, null: false
     t.boolean "parking", default: false, null: false
     t.boolean "kitchen", default: false, null: false

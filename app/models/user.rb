@@ -63,7 +63,7 @@ class User < ApplicationRecord
 
   def validate_age
     if birth_date.present? && birth_date > 18.years.ago
-        errors.add(:birth_date, "You must be 18 or older to use Cozybnb. Other people won't see your birthday.")
+        errors.add(:birth_date, "You must be 18 or older to use Venuspot. Other people won't see your birthday.")
     end
   end
 

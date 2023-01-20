@@ -10,15 +10,12 @@
     },
     "repository": {
       "type": "git",
-      "url": "git+https://github.com/hannnmc/Cozybnb.git"
+      "url": "https://github.com/mwaurajr/Venu-Spot-FrontEnd"
     },
     "keywords": [],
     "author": "",
     "license": "ISC",
-    "bugs": {
-      "url": "https://github.com/hannnmc/Cozybnb/issues"
-    },
-    "homepage": "https://github.com/hannnmc/Cozybnb#readme",
+    "homepage": "https://github.com/mwaurajr/Venu-Spot-FrontEnd/blob/main/README.md",
     "engines": {
       "node": "16.x"
     },
